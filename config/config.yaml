@@ -1,0 +1,16 @@
+### assembly_version: "V1"
+ref_genome: 
+  Lsat_V11_RefSeq:  "/path_to_data/Ref_Genome/GCF_002870075.4_Lsat_Salinas_v11_Genome.ntJoin113.fasta" ### has to be absolute path
+  Lsat_V14_Draft:   "/path_to_data/Ref_Genome/Lsat_Sal_Hybrid_Hifiasm_D_Genome.Asm.2023.03.28.ntJoin113.fa"
+min_contig_len:
+  - 10000  ### 
+k:
+  - 52     ###  ntJoin k-mer value  ###
+w:
+  - 16000  ### ntJoin window length ###
+reads:
+  Lsat_Diana_V1:        "/path_to_data/HiFi_Reads/HiFi_Diana_2X.Fasta"
+  Lsat_Salinas_Test:    "/path_to_data/HiFi_Reads/Lsat_Salinas_HiFi_PCR_Free_Reads_4X.5K_Plus.Fasta"
+gfa_hifiasm:  ### TODO: remove this entire section to use hifiasm ###
+  Lsat_Diana_V1:        "/path_to_data/Hifiasm_GFA/Asm.Diana_231216.bp.p_ctg.gfa"
+  Lsat_Salinas_Test:    "/path_to_data/Hifiasm_GFA/Asm.Salinas_HiFi_231222.bp.p_ctg.gfa"
