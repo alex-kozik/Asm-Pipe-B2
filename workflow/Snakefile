@@ -37,8 +37,8 @@ include: "rules/08.assy_stat.smk"
 rule all:
     input:
         expand("results/{name}/05.contigs_renamed/Contigs_HiFiasm_{name}.{minlen}.Renamed.fa", name = config["reads"], minlen = config["min_contig_len"]), #the renamed contigs
-        expand("results/{name}/06.ntjoin/Scaffolds_HiFiasm_{name}.vs.{ref_gen}.{minlen}.k{k}.w{w}.n1.all.scaffolds.fa", name = config["reads"], minlen = config["min_contig_len"], k=config["k"], w=config["w"], ref_gen = config["ref_genome"]), #the scaffolding results
-        expand("results/{name}/07.mummer/{reference}/Scaffolds_HiFiasm_{name}.vs.{ref_gen}.{minlen}.k{k}.w{w}.n1.all.scaffolds.MUMmer.plot.gp", name = config["reads"], reference = config["ref_genome"], minlen = config["min_contig_len"], k=config["k"], w=config["w"], ref_gen = config["ref_genome"]), #the dotplot for scaffolds
+        expand("results/{name}/06.ntjoin/Scaffolds_HiFiasm_{name}.vs.{ref_gen}.{minlen}.k{k}.w{w}.n2.all.scaffolds.fa", name = config["reads"], minlen = config["min_contig_len"], k=config["k"], w=config["w"], ref_gen = config["ref_genome"]), #the scaffolding results
+        expand("results/{name}/07.mummer/{reference}/Scaffolds_HiFiasm_{name}.vs.{ref_gen}.{minlen}.k{k}.w{w}.n2.all.scaffolds.MUMmer.plot.gp", name = config["reads"], reference = config["ref_genome"], minlen = config["min_contig_len"], k=config["k"], w=config["w"], ref_gen = config["ref_genome"]), #the dotplot for scaffolds
         expand("results/{name}/07.mummer/{reference}/Contigs_HiFiasm_{name}.{minlen}.Renamed.MUMmer.plot.gp", name = config["reads"], reference = config["ref_genome"], minlen = config["min_contig_len"]), #the dotplot for contigs
         expand("results/{name}/08.assy_stat/Contigs_HiFiasm_{name}.{minlen}.Renamed.assy_stat", name = config["reads"], minlen = config["min_contig_len"]), #the assembly stats for contigs
         expand("results/{name}/08.assy_stat/Scaffolds_HiFiasm_{name}.vs.{ref_gen}.{minlen}.k{k}.w{w}.n2.{ntj_out}.scaffolds.assy_stat", name = config["reads"], minlen = config["min_contig_len"], k=config["k"], w=config["w"], ntj_out = ["all", "assigned", "unassigned"], ref_gen = config["ref_genome"]), #the assembly stats for contigs
