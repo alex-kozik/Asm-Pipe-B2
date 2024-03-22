@@ -19,6 +19,6 @@ rule ntjoin:
         (
         ln -s $(realpath {input.contigs}) $(dirname {output.all})/Scaffolds_HiFiasm_{wildcards.asmname}.vs.{wildcards.ref_gen}.{wildcards.minlen}
         cd $(dirname {output.all})
-        ntJoin assemble target=Scaffolds_HiFiasm_{wildcards.asmname}.vs.{wildcards.ref_gen}.{wildcards.minlen} references='{input.reference}' target_weight='1' reference_weights='2' G=10000 agp=True no_cut=True overlap=False k={wildcards.k} w={wildcards.w} mkt=True prefix=$(basename {output.all} | rev | cut -d '.' -f 2- | rev) t={threads}
+        ntJoin assemble target=Scaffolds_HiFiasm_{wildcards.asmname}.vs.{wildcards.ref_gen}.{wildcards.minlen} references='{input.reference}' target_weight='1' reference_weights='2' G=10000 agp=True no_cut=True overlap=False n=2 k={wildcards.k} w={wildcards.w} mkt=True prefix=$(basename {output.all} | rev | cut -d '.' -f 2- | rev) t={threads}
         ) &> {log}
         """
